@@ -1,6 +1,5 @@
 .App {
   display: flex;
-  justify-content: center;
   flex-direction: column;
 }
 
@@ -9,6 +8,7 @@ body {
   padding: 0%
 }
 .TitleSection {
+  padding: 32px;
   position: relative;
   background-color: #79befd;
   width:50vw;

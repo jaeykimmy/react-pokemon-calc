@@ -55,7 +55,7 @@ if (isNaN(iv)) {
   const submitLevelHandler = (event) => {
     setLevel(event.target.value)
   }
-
+  
   const searchPokemon = () => {
     Axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
       .then(results => {
@@ -74,7 +74,6 @@ if (isNaN(iv)) {
   return (
     <div className="App">
       <div className="TitleSection">
-        <h1>Pokemon Stats</h1>
         <input type='text' placeholder='Pokemon' onChange={submitNameHandler}></input>
         <input type='text' placeholder='Nature' onChange={submitNatureHandler}></input>
         <input type='number' placeholder='EV' onChange={submitEvHandler}></input>
@@ -92,6 +91,7 @@ if (isNaN(iv)) {
               <h1>{speedCalc} Speed</h1>
               <p>{CapName} with {nature}x nature at level {level} with {ev} EV and {iv} IV</p>
               <h3>{CapName} at level {level} has a min/max speed of {minCalc}/{maxCalc}</h3>
+              <p>Base Speed: {pokemonSpeed}</p>
             </>
           )}
       </div>
