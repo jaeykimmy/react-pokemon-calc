@@ -1,12 +1,18 @@
 import './Input.css';
 import { useState } from 'react';
 import Axios from "axios"
+import BarChart from './BarChart';
 
 
 function Input() {
   const [pokemonName, setPokemonName] = useState('')
   const [pokemonChosen, setPokemonChosen] = useState(false)
   const [pokemonSpeed, setPokemonSpeed] = useState('')
+  const [pokemonHP, setPokemonHP] = useState('')
+  const [pokemonAttack, setPokemonAttack] = useState('')
+  const [pokemonDefense, setPokemonDefense] = useState('')
+  const [pokemonSpAtk, setPokemonSpAtk] = useState('')
+  const [pokemonSpDef, setPokemonSpDef] = useState('')
   const [pokemon, setPokemon] = useState({
           img: '',
   })
@@ -63,6 +69,11 @@ if (isNaN(iv)) {
           img: results.data.sprites.front_default,
         })
         setPokemonChosen(true)
+        setPokemonHP(results.data.stats[0].base_stat)
+        setPokemonAttack(results.data.stats[1].base_stat)
+        setPokemonDefense(results.data.stats[2].base_stat)
+        setPokemonSpAtk(results.data.stats[3].base_stat)
+        setPokemonSpDef(results.data.stats[4].base_stat)
         setPokemonSpeed(results.data.stats[5].base_stat)
         
       })
@@ -88,10 +99,16 @@ if (isNaN(iv)) {
             <>
             <h1>{CapName}</h1>
             <img src={pokemon.img} />
-              <h1>{speedCalc} Speed</h1>
-              <p>{CapName} with {nature}x nature at level {level} with {ev} EV and {iv} IV</p>
+              <h1>{speedCalc} Speed:</h1>
+              <p>{nature}x nature at level {level} with {ev} EV and {iv} IV</p>
               <h3>{CapName} at level {level} has a min/max speed of {minCalc}/{maxCalc}</h3>
-              <p>Base Speed: {pokemonSpeed}</p>
+              <p>HP: {pokemonHP}</p>
+              <p>Atk: {pokemonAttack}</p>
+              <p>Def: {pokemonDefense}</p>
+              <p>SpAtk: {pokemonSpAtk}</p>
+              <p>SpDef: {pokemonSpDef}</p>
+              <p>Spd: {pokemonSpeed}</p>
+              <BarChart/>
             </>
           )}
       </div>
