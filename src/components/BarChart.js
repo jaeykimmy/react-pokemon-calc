@@ -43,7 +43,7 @@ export default function BarChart(props) {
   data={props.stats}
   labels={props.stringStats}
   width={500}
-  height={300}
+  height={200}
   barRadius={5}
   barWidthPercentage={0.65}
   barColor='blue'
