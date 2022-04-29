@@ -46,10 +46,12 @@ if (isNaN(iv)) {
   iv = 31;
 }
   const submitNameHandler = (event) => {
+    event.target.value = event.target.value.toLowerCase()
     setPokemonName(event.target.value)
   }
 
   const submitNatureHandler = (event) => {
+    event.target.value = event.target.value.toLowerCase()
     setNature(event.target.value)
   }
   const submitIvHandler = (event) => {
