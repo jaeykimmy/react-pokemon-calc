@@ -1,14 +1,15 @@
 import HorizontalBarGraph from '@chartiful/react-horizontal-bar-graph'
 
-export default function BarChart() {
+export default function BarChart(props) {
+  console.log(props)
   return (
     <HorizontalBarGraph
-      data={[125, 100, 50, 75, 100, 125]}
+      data={props.stats}
       labels={['blach', 'Q2, 2019', 'Q3, 2019', 'Q4, 2019', 'Q1, 2020', 'Q2, 2020']}
       width={400}
       height={300}
       barRadius={7}
-      barColor='#82d551'
+      barColor='blue'
       baseConfig={{
         hasYAxisBackgroundLines: false,
         xAxisLabelStyle: {
@@ -34,7 +35,7 @@ export default function BarChart() {
         padding: 10,
         paddingTop: 20,
         borderRadius: 20,
-        backgroundColor: `#e1f5d6`
+        backgroundColor: `#79befd`
       }}
     />
 

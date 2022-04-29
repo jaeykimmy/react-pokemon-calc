@@ -16,10 +16,10 @@ function Input() {
   const [pokemon, setPokemon] = useState({
           img: '',
   })
-  let [nature, setNature] = useState('')
-  let [ev, setEv] = useState(0)
-  let [iv, setIv] = useState(0)
-  let [level, setLevel] = useState(0)
+  let [nature, setNature] = useState(1)
+  let [ev, setEv] = useState(255)
+  let [iv, setIv] = useState(31)
+  let [level, setLevel] = useState(50)
 
 let minusNature = ['brave', 'relaxed', 'quiet', 'sassy', 'minus'];
 if (minusNature.includes(nature)) {
@@ -86,10 +86,10 @@ if (isNaN(iv)) {
     <div className="App">
       <div className="TitleSection">
         <input type='text' placeholder='Pokemon' onChange={submitNameHandler}></input>
-        <input type='text' placeholder='Nature' onChange={submitNatureHandler}></input>
-        <input type='number' placeholder='EV' onChange={submitEvHandler}></input>
-        <input type='number' placeholder='IV' onChange={submitIvHandler}></input>
-        <input type='number' placeholder='Level' onChange={submitLevelHandler}></input>
+        <input type='text' placeholder='Nature' defaultValue={'docile'} onChange={submitNatureHandler}></input>
+        <input type='number' placeholder='EV' defaultValue={255} onChange={submitEvHandler}></input>
+        <input type='number' placeholder='IV' defaultValue={31} onChange={submitIvHandler}></input>
+        <input type='number' placeholder='Level' defaultValue={50} onChange={submitLevelHandler}></input>
         <button onClick={searchPokemon}>Search Pokemon</button>
       </div>
       <div className="DisplaySection">
@@ -108,7 +108,7 @@ if (isNaN(iv)) {
               <p>SpAtk: {pokemonSpAtk}</p>
               <p>SpDef: {pokemonSpDef}</p>
               <p>Spd: {pokemonSpeed}</p>
-              <BarChart/>
+              <BarChart stats={[pokemonHP, pokemonAttack, pokemonDefense, pokemonSpAtk, pokemonSpDef, pokemonSpeed]}/>
             </>
           )}
       </div>
