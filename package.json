@@ -5,6 +5,7 @@
   "dependencies": {
     "@chartiful/react-chart-builder": "^0.1.6",
     "@chartiful/react-horizontal-bar-graph": "^0.1.6",
+    "@chartiful/react-vertical-bar-graph": "^0.1.6",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",

@@ -87,9 +87,9 @@ if (isNaN(iv)) {
       <div className="TitleSection">
         <input type='text' placeholder='Pokemon' onChange={submitNameHandler}></input>
         <input type='text' placeholder='Nature' defaultValue={'docile'} onChange={submitNatureHandler}></input>
-        <input type='number' placeholder='EV' defaultValue={255} onChange={submitEvHandler}></input>
-        <input type='number' placeholder='IV' defaultValue={31} onChange={submitIvHandler}></input>
-        <input type='number' placeholder='Level' defaultValue={50} onChange={submitLevelHandler}></input>
+        <input type='number' placeholder='EV' step={4} defaultValue={252} onChange={submitEvHandler}></input>
+        <input type='number' placeholder='IV' max={31} defaultValue={31} onChange={submitIvHandler}></input>
+        <input type='number' placeholder='Level' max={100} defaultValue={50} onChange={submitLevelHandler}></input>
         <button onClick={searchPokemon}>Search Pokemon</button>
       </div>
       <div className="DisplaySection">
@@ -97,18 +97,14 @@ if (isNaN(iv)) {
           (<h1>Please enter a Pokemon</h1>
           ) : (
             <>
-            <h1>{CapName}</h1>
+            <h1>{CapName}: {speedCalc} Speed</h1>
             <img src={pokemon.img} />
-              <h1>{speedCalc} Speed:</h1>
+              
               <p>{nature}x nature at level {level} with {ev} EV and {iv} IV</p>
+              <BarChart
+                stats={[pokemonHP, pokemonAttack, pokemonDefense, pokemonSpAtk, pokemonSpDef, pokemonSpeed]}
+                stringStats={[`HP: ${pokemonHP}`, `Atk: ${pokemonAttack}`, `Def: ${pokemonDefense}`, `SpA: ${pokemonSpAtk}`, `SpD: ${pokemonSpDef}`, `Speed: ${pokemonSpeed}`]} />
               <h3>{CapName} at level {level} has a min/max speed of {minCalc}/{maxCalc}</h3>
-              <p>HP: {pokemonHP}</p>
-              <p>Atk: {pokemonAttack}</p>
-              <p>Def: {pokemonDefense}</p>
-              <p>SpAtk: {pokemonSpAtk}</p>
-              <p>SpDef: {pokemonSpDef}</p>
-              <p>Spd: {pokemonSpeed}</p>
-              <BarChart stats={[pokemonHP, pokemonAttack, pokemonDefense, pokemonSpAtk, pokemonSpDef, pokemonSpeed]}/>
             </>
           )}
       </div>
