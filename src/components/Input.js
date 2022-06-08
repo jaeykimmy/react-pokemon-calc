@@ -1,5 +1,5 @@
 import './Input.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Axios from "axios"
 import BarChart from './BarChart';
 
@@ -45,6 +45,24 @@ if (isNaN(level)) {
 if (isNaN(iv)) {
   iv = 31;
 }
+  
+  useEffect(() => {
+    Axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+      .then(results => {
+        setPokemon({
+          img: results.data.sprites.front_default,
+        })
+        setPokemonChosen(true)
+        setPokemonHP(results.data.stats[0].base_stat)
+        setPokemonAttack(results.data.stats[1].base_stat)
+        setPokemonDefense(results.data.stats[2].base_stat)
+        setPokemonSpAtk(results.data.stats[3].base_stat)
+        setPokemonSpDef(results.data.stats[4].base_stat)
+        setPokemonSpeed(results.data.stats[5].base_stat)
+        
+      })
+  })
+ 
   const submitNameHandler = (event) => {
     event.target.value = event.target.value.toLowerCase()
     setPokemonName(event.target.value)
