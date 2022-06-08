@@ -118,7 +118,7 @@ if (isNaN(iv)) {
           ) : (
             <>
             <h1>{CapName}: {speedCalc} Speed</h1>
-            <img src={pokemon.img} />
+            <img src={pokemon.img} alt=''/>
               
               <p>{nature}x nature at level {level} with {ev} EV and {iv} IV</p>
               <BarChart
