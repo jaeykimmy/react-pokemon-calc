@@ -2,7 +2,7 @@ import HorizontalBarGraph from '@chartiful/react-horizontal-bar-graph'
 import VerticalBarGraph from '@chartiful/react-vertical-bar-graph'
 
 export default function BarChart(props) {
-  console.log(props)
+  // console.log(props)
   return (
     // <HorizontalBarGraph
     //   data={props.stats}

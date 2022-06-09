@@ -1,0 +1,124 @@
+import * as React from 'react';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import { useState } from 'react';
+
+export default function NatureAutocomplete({submitNatureHandler}) {
+  const [nature, setNature] = useState('docile')
+  console.log(nature)
+  return (
+    <Autocomplete
+      id="combo-box-demo"
+      onChange={(_, newValue) =>
+      {setNature(newValue)}}
+      options={natureArray.map((option)=> option.name)}
+      sx={{ width: 300 }}
+      value={nature}
+      renderInput={(params) => <TextField {...params} label="Nature" onChange={(e) => submitNatureHandler(e.target.value)}/>}
+    />
+  );
+}
+
+
+const natureArray = [
+    {
+      "name": "hardy",
+      "url": "https://pokeapi.co/api/v2/nature/1/"
+    },
+    {
+      "name": "bold",
+      "url": "https://pokeapi.co/api/v2/nature/2/"
+    },
+    {
+      "name": "modest",
+      "url": "https://pokeapi.co/api/v2/nature/3/"
+    },
+    {
+      "name": "calm",
+      "url": "https://pokeapi.co/api/v2/nature/4/"
+    },
+    {
+      "name": "timid",
+      "url": "https://pokeapi.co/api/v2/nature/5/"
+    },
+    {
+      "name": "lonely",
+      "url": "https://pokeapi.co/api/v2/nature/6/"
+    },
+    {
+      "name": "docile",
+      "url": "https://pokeapi.co/api/v2/nature/7/"
+    },
+    {
+      "name": "mild",
+      "url": "https://pokeapi.co/api/v2/nature/8/"
+    },
+    {
+      "name": "gentle",
+      "url": "https://pokeapi.co/api/v2/nature/9/"
+    },
+    {
+      "name": "hasty",
+      "url": "https://pokeapi.co/api/v2/nature/10/"
+    },
+    {
+      "name": "adamant",
+      "url": "https://pokeapi.co/api/v2/nature/11/"
+    },
+    {
+      "name": "impish",
+      "url": "https://pokeapi.co/api/v2/nature/12/"
+    },
+    {
+      "name": "bashful",
+      "url": "https://pokeapi.co/api/v2/nature/13/"
+    },
+    {
+      "name": "careful",
+      "url": "https://pokeapi.co/api/v2/nature/14/"
+    },
+    {
+      "name": "rash",
+      "url": "https://pokeapi.co/api/v2/nature/15/"
+    },
+    {
+      "name": "jolly",
+      "url": "https://pokeapi.co/api/v2/nature/16/"
+    },
+    {
+      "name": "naughty",
+      "url": "https://pokeapi.co/api/v2/nature/17/"
+    },
+    {
+      "name": "lax",
+      "url": "https://pokeapi.co/api/v2/nature/18/"
+    },
+    {
+      "name": "quirky",
+      "url": "https://pokeapi.co/api/v2/nature/19/"
+    },
+    {
+      "name": "naive",
+      "url": "https://pokeapi.co/api/v2/nature/20/"
+    },
+    {
+      "name": "brave",
+      "url": "https://pokeapi.co/api/v2/nature/21/"
+    },
+    {
+      "name": "relaxed",
+      "url": "https://pokeapi.co/api/v2/nature/22/"
+    },
+    {
+      "name": "quiet",
+      "url": "https://pokeapi.co/api/v2/nature/23/"
+    },
+    {
+      "name": "sassy",
+      "url": "https://pokeapi.co/api/v2/nature/24/"
+    },
+    {
+      "name": "serious",
+      "url": "https://pokeapi.co/api/v2/nature/25/"
+    }
+  ]
