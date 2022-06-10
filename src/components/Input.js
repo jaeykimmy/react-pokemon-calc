@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Axios from "axios"
 import BarChart from './BarChart';
 import NatureAutocomplete from './NatureAutocomplete';
+import { TextField } from '@mui/material';
 
 
 function Input() {
@@ -88,13 +89,14 @@ if (isNaN(iv)) {
   return (
     <div className="App">
       <div className="TitleSection">
+        {/* <TextField id="standard-basic" label="Pokemon" variant="standard" onChange={submitNameHandler}/> */}
         <input type='text' placeholder='Pokemon' onChange={submitNameHandler}></input>
-        <NatureAutocomplete submitNatureHandler={submitNatureHandler}/>
         {/* <input type='text' placeholder='Nature' defaultValue={'docile'} onChange={submitNatureHandler}></input> */}
         <input type='number' placeholder='EV' step={4} defaultValue={252} onChange={submitEvHandler}></input>
         <input type='number' placeholder='IV' max={31} defaultValue={31} onChange={submitIvHandler}></input>
         <input type='number' placeholder='Level' max={100} defaultValue={50} onChange={submitLevelHandler}></input>
-        <button onClick={searchPokemon}>Search Pokemon</button>
+        <NatureAutocomplete className="input" submitNatureHandler={submitNatureHandler}/>
+        <button class="submitButton"onClick={searchPokemon}>Search Pokemon</button>
       </div>
       <div className="DisplaySection">
         {!pokemonChosen ?

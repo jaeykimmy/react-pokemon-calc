@@ -13,7 +13,8 @@ export default function NatureAutocomplete({submitNatureHandler}) {
         submitNatureHandler(newValue)
       }}
       options={natureArray.map((option)=> option.name)}
-      sx={{ width: 300 }}
+      sx={{ width: 300}}
+      size="small"
       // value={nat}
       renderInput={(params) => <TextField {...params} label="Nature"/>}
     />
