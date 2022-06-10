@@ -52,8 +52,8 @@ if (isNaN(iv)) {
     setPokemonName(event.target.value)
   }
 
-  const submitNatureHandler = (value) => {
-    setNature(value)
+  const submitNatureHandler = (natureName) => {
+    setNature(natureName)
   }
   console.log(nature)
   const submitIvHandler = (event) => {
