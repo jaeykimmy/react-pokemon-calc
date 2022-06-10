@@ -4,17 +4,20 @@ import Autocomplete from '@mui/material/Autocomplete';
 import { useState } from 'react';
 
 export default function NatureAutocomplete({submitNatureHandler}) {
-  const [nature, setNature] = useState('docile')
-  console.log(nature)
+  const [nat, setNat] = useState('docile')
+  
+  console.log(nat)
   return (
     <Autocomplete
       id="combo-box-demo"
-      onChange={(_, newValue) =>
-      {setNature(newValue)}}
+      onChange={(e, newValue) =>
+      {
+        setNat(newValue)
+      }}
       options={natureArray.map((option)=> option.name)}
       sx={{ width: 300 }}
-      value={nature}
-      renderInput={(params) => <TextField {...params} label="Nature" onChange={(e) => submitNatureHandler(e.target.value)}/>}
+      value={nat}
+      renderInput={(params) => <TextField {...params} label="Nature"/>}
     />
   );
 }
