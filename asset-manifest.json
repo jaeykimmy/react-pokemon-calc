@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-pokemon-calc/static/css/main.c45f0e17.css",
-    "main.js": "/react-pokemon-calc/static/js/main.24530b34.js",
+    "main.js": "/react-pokemon-calc/static/js/main.9b6ee211.js",
     "static/js/787.35f39fb4.chunk.js": "/react-pokemon-calc/static/js/787.35f39fb4.chunk.js",
     "index.html": "/react-pokemon-calc/index.html",
     "main.c45f0e17.css.map": "/react-pokemon-calc/static/css/main.c45f0e17.css.map",
-    "main.24530b34.js.map": "/react-pokemon-calc/static/js/main.24530b34.js.map",
+    "main.9b6ee211.js.map": "/react-pokemon-calc/static/js/main.9b6ee211.js.map",
     "787.35f39fb4.chunk.js.map": "/react-pokemon-calc/static/js/787.35f39fb4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c45f0e17.css",
-    "static/js/main.24530b34.js"
+    "static/js/main.9b6ee211.js"
   ]
 }
