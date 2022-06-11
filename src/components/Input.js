@@ -109,8 +109,9 @@ if (isNaN(iv)) {
               <p>{nature}x nature at level {level} with {ev} EV and {iv} IV</p>
               <BarChart
                 stats={[pokemonHP, pokemonAttack, pokemonDefense, pokemonSpAtk, pokemonSpDef, pokemonSpeed]}
-                stringStats={[`HP: ${pokemonHP}`, `Atk: ${pokemonAttack}`, `Def: ${pokemonDefense}`, `SpA: ${pokemonSpAtk}`, `SpD: ${pokemonSpDef}`, `Speed: ${pokemonSpeed}`]} />
-              <h3> {pokemon} at level {level} has a min/max speed of {minCalc}/{maxCalc}</h3>
+                stringStats={[`HP:${pokemonHP}`, `Atk:${pokemonAttack}`, `Def: ${pokemonDefense}`, `SpA:${pokemonSpAtk}`, `SpD:${pokemonSpDef}`, `Speed:${pokemonSpeed}`]} />
+              <h3> {pokemon} at level {level}:</h3>
+                <p>min/max speed of {minCalc}/{maxCalc}</p>
             </>
           )}
       </div>

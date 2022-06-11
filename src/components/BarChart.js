@@ -42,7 +42,7 @@ export default function BarChart(props) {
     <VerticalBarGraph
   data={props.stats}
   labels={props.stringStats}
-  width={500}
+  width={440}
   height={200}
   barRadius={5}
   barWidthPercentage={0.65}
@@ -60,7 +60,7 @@ export default function BarChart(props) {
     paddingTop: 20,
     borderRadius: 20,
     backgroundColor: `#79befd`,
-    width: 500
+    width: 440
   }}
 />
   )
