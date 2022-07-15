@@ -1,7 +1,6 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import { useState } from 'react';
 
 export default function NatureAutocomplete({submitNatureHandler}) {
   
@@ -15,7 +14,7 @@ export default function NatureAutocomplete({submitNatureHandler}) {
       options={natureArray.map((option)=> option.name)}
       sx={{ width: 300}}
       size="small"
-      // value={nat}
+      // inputProps={{ textAlign: 'center' }}
       renderInput={(params) => <TextField {...params} label="Nature"/>}
     />
   );
